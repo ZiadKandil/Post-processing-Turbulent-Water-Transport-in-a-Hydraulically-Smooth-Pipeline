@@ -16,9 +16,8 @@ This repository contains comprehensive MATLAB scripts for analyzing and validati
 
 ### Advanced Flow Analysis
 - Wall-normal velocity profiles in dimensional and dimensionless forms
-- Wall shear stress computation and axial distribution
+- Wall shear stress computation and shear stress component
 - Reynolds stress field extraction and analysis
-- Turbulent viscosity (eddy viscosity) field extraction
 - Total shear stress decomposition into viscous and Reynolds components
 - Pressure distribution along the pipeline
 - Friction factor calculation and comparison
@@ -60,7 +59,7 @@ This repository contains comprehensive MATLAB scripts for analyzing and validati
 - Handle both Cartesian and Body-Fitted Coordinate (BFC) grids
 - Compute derived quantities (W+, Y+, friction velocity, shear stresses)
 
-### Advanced Visualization
+### Visualization
 - Y+ distribution along pipe length
 - Velocity profile comparisons (CFD vs. experiments vs. analytical)
 - Wall shear stress spatial distribution
@@ -94,6 +93,13 @@ This repository contains comprehensive MATLAB scripts for analyzing and validati
   - Supports both Cartesian and Body-Fitted Coordinate (BFC) grids
   - Allows selective variable processing
   - Required variables: `P1`, `V1`, `W1`, `DWDY`, `ENUT`, `KE`, `EP`, `STRS`, `YPLS`
+
+- **exp_data_Torgbersen.mat**: Experimental validation dataset from Torbergsen (1998)
+  - Velocity profiles (Series 1 and Series 2): `W_profile_series1`, `W_profile_series2`
+  - Turbulent kinetic energy profile: `k_profile`
+  - Dissipation rate profiles (Series 1, 2, and 3): `eps_profile_series1`, `eps_profile_series2`, `eps_profile_series3`
+  - All profiles include radial position and normalized quantities
+  - Essential for experimental validation and benchmark comparisons
 
 - **CFD_Test_Case_Documentation.pdf**: Complete test case specifications and documentation
 
@@ -308,35 +314,6 @@ Convergence verified for pressure, velocity, and wall shear stress.
   - `main.mat`, `mesh1.mat`, `mesh2.mat`, `mesh3.mat` (CFD results)
   - `exp_data_Torgbersen.mat` (experimental validation data)
 
-## Applications
-
-This comprehensive validation toolset is designed for:
-
-1. **CFD Model Validation**
-   - Verify turbulence model predictions against experimental data
-   - Assess accuracy of wall functions and near-wall treatment
-   - Validate friction factor predictions
-
-2. **Grid Independence Studies**
-   - Determine optimal mesh resolution
-   - Quantify numerical uncertainty
-   - Ensure solution convergence
-
-3. **Turbulent Flow Research**
-   - Study universal velocity profiles and log-law behavior
-   - Analyze Reynolds stress distributions  
-   - Investigate turbulence production and dissipation
-
-4. **Pipeline Hydraulics**
-   - Predict pressure drops in smooth pipes
-   - Calculate wall shear stress distributions
-   - Design optimization for fluid transport systems
-
-5. **Educational Purposes**
-   - Demonstrate CFD validation methodology
-   - Teach turbulent flow physics and modeling
-   - Compare analytical correlations with numerical predictions
-   - Understand dimensionless parameters in turbulence
 
 ## Generated Visualizations
 
@@ -412,4 +389,4 @@ Ziad Kandil
 
 ## Acknowledgments
 
-Developed as part of MSc Mathematical Engineering coursework in Computational Fluid Dynamics. This work focuses on rigorous CFD validation methodology, comparing numerical predictions with experimental data from Torbergsen (1998) and analytical correlations from classical turbulent flow theory. Special thanks to the fluid mechanics research community for providing high-quality experimental benchmark data.
+Developed as part of Fluid Labs coursework at Politecnico di Milano.
